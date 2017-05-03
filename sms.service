@@ -1,0 +1,14 @@
+[Unit]
+Description=sms to someone
+After=multi-user.target wakemodem.service
+Requires=wakemodem.service
+
+[Service]
+Type=notify
+User=root
+ExecStart=/usr/bin/python /home/jardik/sms.py
+TimeoutSec=3min
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

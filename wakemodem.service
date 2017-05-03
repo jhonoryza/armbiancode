@@ -1,0 +1,12 @@
+[Unit]
+Description=wake modem to get network
+After=multi-user.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/python /home/jardik/setup.py
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
